@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
               ),
             );
           },
-          home: const OnboardingScreen(),
+          home:  OnboardingScreen(),
         );
       },
     );

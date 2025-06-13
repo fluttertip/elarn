@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:elearningapp/utils/colors.dart';
 
 class MyLearningView extends StatelessWidget {
-  const MyLearningView({Key? key}) : super(key: key);
+   MyLearningView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

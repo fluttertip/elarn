@@ -1,12 +1,12 @@
 import 'package:elearningapp/utils/colors.dart';
-import 'package:elearningapp/views/NavBarViews/MyLearningView.dart';
+import 'package:elearningapp/views/NavBarViews/mylearningview.dart';
 import 'package:elearningapp/views/NavBarViews/gavoritelistview.dart';
 import 'package:elearningapp/views/NavBarViews/settingview.dart';
 import 'package:flutter/material.dart';
 import 'package:elearningapp/views/HomeView/home_view.dart';
 
 class NavBarViews extends StatefulWidget {
-  const NavBarViews({Key? key}) : super(key: key);
+   NavBarViews({Key? key}) : super(key: key);
 
   @override
   State<NavBarViews> createState() => _NavBarViewsState();
@@ -15,10 +15,10 @@ class NavBarViews extends StatefulWidget {
 class _NavBarViewsState extends State<NavBarViews> {
   int currentIndex = 0;
   List<Widget> screens = [
-    const HomeScreen(key: ValueKey(0)),
-    const MyLearningView(),
-    const FavoriteListView(),
-    const SettingsView(),
+     HomeScreen(key: ValueKey(0)),
+     MyLearningView(),
+     FavoriteListView(),
+     SettingsView(),
   ];
 
   @override

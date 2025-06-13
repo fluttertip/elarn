@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:elearningapp/utils/colors.dart';
 
 class FavoriteListView extends StatelessWidget {
-  const FavoriteListView({Key? key}) : super(key: key);
+   FavoriteListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

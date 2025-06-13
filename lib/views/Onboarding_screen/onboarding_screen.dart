@@ -4,7 +4,7 @@ import 'package:elearningapp/views/NavBarViews/nav_bar_views.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({Key? key, }) : super(key: key);
+   OnboardingScreen({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class OnboardingScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>const NavBarViews()), // Navigate to your NavBarView
+                          MaterialPageRoute(builder: (context) => NavBarViews()), // Navigate to your NavBarView
                         );
                       },
                     ),
