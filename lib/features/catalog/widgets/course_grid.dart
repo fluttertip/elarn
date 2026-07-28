@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../core/constants/asset_paths.dart';
 import '../../../data/models/course.dart';
 
 class CourseGrid extends StatelessWidget {
@@ -31,7 +32,7 @@ class CourseGrid extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(16),
                         child: Image.asset(
-                          course.image,
+                          AssetPaths.normalize(course.image),
                           width: 110,
                           height: 92,
                           fit: BoxFit.cover,

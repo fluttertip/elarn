@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../core/constants/asset_paths.dart';
 import '../../data/models/course.dart';
 import '../../data/stores/app_providers.dart';
 import 'widgets/course_grid.dart';
@@ -64,7 +65,7 @@ class _CatalogCard extends StatelessWidget {
     borderRadius: BorderRadius.circular(24),
     onTap: () => context.push('/course/${course.id}'),
     child: Padding(padding: const EdgeInsets.all(14), child: Row(children: [
-      ClipRRect(borderRadius: BorderRadius.circular(16), child: Image.asset(course.image, width: 110, height: 92, fit: BoxFit.cover, errorBuilder: (_, __, ___) => Container(width: 110, height: 92, color: Theme.of(context).colorScheme.primaryContainer))),
+      ClipRRect(borderRadius: BorderRadius.circular(16), child: Image.asset(AssetPaths.normalize(course.image), width: 110, height: 92, fit: BoxFit.cover, errorBuilder: (_, __, ___) => Container(width: 110, height: 92, color: Theme.of(context).colorScheme.primaryContainer))),
       const SizedBox(width: 14),
       Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(course.categoryId.toUpperCase(), style: Theme.of(context).textTheme.labelSmall),

@@ -9,9 +9,9 @@ class GreetingHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 12),
-        Text('Good morning, learner', style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w900)),
+        Text('Welcome, learner', style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w900)),
         const SizedBox(height: 8),
-        const Text('Keep the momentum. Your next breakthrough is one lesson away.'),
+        const Text('Keep the momentum. You\'re doing great!'),
         const SizedBox(height: 22),
       ],
     );

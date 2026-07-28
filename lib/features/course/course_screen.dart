@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../core/constants/asset_paths.dart';
 import '../../data/stores/app_providers.dart';
 
 class CourseScreen extends ConsumerWidget {
@@ -18,7 +19,7 @@ class CourseScreen extends ConsumerWidget {
         final completed = course.lessonIds.where(progress.completedLessons.contains).length;
         final saved = progress.bookmarks.contains(course.id);
         return Scaffold(appBar: AppBar(title: const Text('Course details')), body: ListView(padding: const EdgeInsets.all(20), children: [
-          ClipRRect(borderRadius: BorderRadius.circular(28), child: Image.asset(course.image, height: 220, width: double.infinity, fit: BoxFit.cover, errorBuilder: (_, __, ___) => Container(height: 220, color: Theme.of(context).colorScheme.primaryContainer))),
+          ClipRRect(borderRadius: BorderRadius.circular(28), child: Image.asset(AssetPaths.normalize(course.image), height: 220, width: double.infinity, fit: BoxFit.cover, errorBuilder: (_, __, ___) => Container(height: 220, color: Theme.of(context).colorScheme.primaryContainer))),
           const SizedBox(height: 20),
           Row(children: [Expanded(child: Text(course.title, style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w900))), IconButton(onPressed: () => ref.read(progressRepositoryProvider).toggleBookmark(course.id), icon: Icon(saved ? Icons.bookmark : Icons.bookmark_outline))]),
           const SizedBox(height: 8),

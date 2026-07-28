@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../core/constants/asset_paths.dart';
 import '../../../data/models/course.dart';
 
 class FeaturedCourses extends StatelessWidget {
@@ -38,7 +39,7 @@ class _CourseTile extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.asset(
-                    course.image,
+                    AssetPaths.normalize(course.image),
                     width: 92,
                     height: 92,
                     fit: BoxFit.cover,

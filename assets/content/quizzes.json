@@ -3,10 +3,227 @@
     "lessonId": "flutter-01",
     "questions": [
       {
-        "question": "Where should course content be loaded?",
-        "answers": ["Inside every build method", "Through a repository", "Only from a button callback", "Inside theme code"],
+        "question": "What is the primary building block of a Flutter interface?",
+        "answers": [
+          "A database table",
+          "A widget",
+          "A server route",
+          "A CSS stylesheet"
+        ],
         "correctIndex": 1,
-        "explanation": "Repositories keep content loading separate from presentation and make the app testable."
+        "explanation": "Flutter interfaces are composed from widgets that describe visual elements, layout, and interactions."
+      },
+      {
+        "question": "Why is widget composition useful?",
+        "answers": [
+          "It makes every screen identical",
+          "It removes the need for state",
+          "It allows interfaces to be divided into reusable components",
+          "It prevents navigation"
+        ],
+        "correctIndex": 2,
+        "explanation": "Composition allows complex interfaces to be built from smaller components with focused responsibilities."
+      },
+      {
+        "question": "What is the main advantage of keeping widgets small and focused?",
+        "answers": [
+          "They become harder to reuse",
+          "They are easier to understand and maintain",
+          "They eliminate all application bugs",
+          "They automatically store data"
+        ],
+        "correctIndex": 1,
+        "explanation": "Small focused widgets are generally easier to understand, reuse, test, and modify."
+      }
+    ]
+  },
+  {
+    "lessonId": "flutter-02",
+    "questions": [
+      {
+        "question": "What is the purpose of a route in an application?",
+        "answers": [
+          "To store images",
+          "To provide a predictable navigation entry point",
+          "To calculate quiz scores",
+          "To change device brightness"
+        ],
+        "correctIndex": 1,
+        "explanation": "Routes provide structured entry points that allow applications to navigate predictably between screens."
+      },
+      {
+        "question": "Why can centralized routing be useful?",
+        "answers": [
+          "It makes navigation logic easier to understand",
+          "It removes all screens",
+          "It prevents users from pressing back",
+          "It replaces application state"
+        ],
+        "correctIndex": 0,
+        "explanation": "Centralized routing makes navigation paths easier to inspect and maintain."
+      },
+      {
+        "question": "What might navigation need to carry between screens?",
+        "answers": [
+          "Only the application theme",
+          "Context such as an item or course identifier",
+          "The device battery level",
+          "The user's operating system"
+        ],
+        "correctIndex": 1,
+        "explanation": "Navigation often passes context such as IDs so the destination screen knows which content to display."
+      }
+    ]
+  },
+  {
+    "lessonId": "flutter-03",
+    "questions": [
+      {
+        "question": "What does Flutter's layout system use to determine how widgets should size themselves?",
+        "answers": [
+          "Constraints",
+          "Database queries",
+          "HTTP requests",
+          "Audio signals"
+        ],
+        "correctIndex": 0,
+        "explanation": "Flutter's layout system works through constraints passed down the widget tree and sizes returned by children."
+      },
+      {
+        "question": "What is the goal of responsive design?",
+        "answers": [
+          "To make every device display the exact same layout",
+          "To adapt interfaces to different available spaces",
+          "To remove navigation",
+          "To prevent scrolling"
+        ],
+        "correctIndex": 1,
+        "explanation": "Responsive design adapts layout, spacing, and sometimes structure to different screen sizes."
+      },
+      {
+        "question": "Why might a tablet need a different layout from a phone?",
+        "answers": [
+          "The tablet cannot run Flutter",
+          "The available screen space is different",
+          "Widgets disappear on tablets",
+          "Phones cannot display text"
+        ],
+        "correctIndex": 1,
+        "explanation": "Different screen dimensions provide different amounts of available space, which can justify different arrangements."
+      }
+    ]
+  },
+  {
+    "lessonId": "internet-01",
+    "questions": [
+      {
+        "question": "What does DNS primarily help translate?",
+        "answers": [
+          "Domain names into IP addresses",
+          "Images into videos",
+          "Passwords into usernames",
+          "Apps into databases"
+        ],
+        "correctIndex": 0,
+        "explanation": "DNS helps map human-readable domain names to IP addresses used to locate network destinations."
+      },
+      {
+        "question": "Why are domain names useful?",
+        "answers": [
+          "Humans find them easier to remember than numerical network addresses",
+          "They eliminate servers",
+          "They prevent all cyberattacks",
+          "They store application databases"
+        ],
+        "correctIndex": 0,
+        "explanation": "Domain names provide human-friendly names for services that are ultimately reached through network addresses."
+      },
+      {
+        "question": "What does a browser generally do after discovering a server destination?",
+        "answers": [
+          "Requests the resources needed to construct the page",
+          "Deletes the server",
+          "Turns off the network",
+          "Changes the domain name"
+        ],
+        "correctIndex": 0,
+        "explanation": "The browser communicates with the server and requests resources such as documents, styles, scripts, and images."
+      }
+    ]
+  },
+  {
+    "lessonId": "internet-02",
+    "questions": [
+      {
+        "question": "How is internet data commonly transported across networks?",
+        "answers": [
+          "As packets",
+          "As physical paper",
+          "As photographs only",
+          "As one continuous cable"
+        ],
+        "correctIndex": 0,
+        "explanation": "Network communication commonly divides data into packets that travel through interconnected networks."
+      },
+      {
+        "question": "What is one role of a router?",
+        "answers": [
+          "Forward packets toward their destinations",
+          "Write application code",
+          "Design user interfaces",
+          "Create passwords"
+        ],
+        "correctIndex": 0,
+        "explanation": "Routers examine network information and forward packets toward appropriate destinations."
+      },
+      {
+        "question": "Why is the internet described as a network of networks?",
+        "answers": [
+          "Because it connects many independently operated networks",
+          "Because every computer is physically connected to every other computer",
+          "Because it only works in one country",
+          "Because websites are stored in one location"
+        ],
+        "correctIndex": 0,
+        "explanation": "The global internet consists of many interconnected networks that communicate through shared protocols."
+      }
+    ]
+  },
+  {
+    "lessonId": "internet-03",
+    "questions": [
+      {
+        "question": "What happens when an application sends a message?",
+        "answers": [
+          "The application communicates with a service responsible for processing or delivering it",
+          "The message immediately appears on every device",
+          "The phone creates a physical copy",
+          "The internet stops other traffic"
+        ],
+        "correctIndex": 0,
+        "explanation": "Modern messaging systems use applications and backend services to process, store, route, and deliver messages."
+      },
+      {
+        "question": "Which system might help determine where a message should be delivered?",
+        "answers": [
+          "A backend service",
+          "A screen brightness setting",
+          "A device wallpaper",
+          "A local font"
+        ],
+        "correctIndex": 0,
+        "explanation": "Backend services can authenticate users, identify recipients, store messages, and coordinate delivery."
+      },
+      {
+        "question": "Why can a simple message depend on many systems?",
+        "answers": [
+          "Modern apps combine networks, servers, databases, and notification systems",
+          "Messages are always manually delivered",
+          "Every message requires a new phone",
+          "The internet has only one server"
+        ],
+        "correctIndex": 0,
+        "explanation": "A modern messaging experience may involve multiple interconnected services working together."
       }
     ]
   }

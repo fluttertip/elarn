@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 abstract final class AssetPaths {
   static const contentBase = 'assets/content/';
   static const imagesBase = 'assets/images/';
@@ -11,4 +13,11 @@ abstract final class AssetPaths {
   static const achievementsJson = '${contentBase}achievements.json';
   static const badgesJson = '${contentBase}badges.json';
   static const glossaryJson = '${contentBase}glossary.json';
+
+  static String normalize(String assetPath) {
+    if (kIsWeb && assetPath.startsWith('assets/')) {
+      return assetPath.substring('assets/'.length);
+    }
+    return assetPath;
+  }
 }

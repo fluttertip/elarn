@@ -1,0 +1,74 @@
+[
+  {
+    "id": "technology",
+    "name": "Technology & Programming",
+    "description": "Understand how modern software is built, from interfaces and apps to the systems behind the internet.",
+    "image": "assets/images/category_technology.jpg"
+  },
+  {
+    "id": "ai-data",
+    "name": "AI & Data",
+    "description": "Explore artificial intelligence, machine learning, data, and the technologies changing how we work.",
+    "image": "assets/images/category_ai_data.jpg"
+  },
+  {
+    "id": "business",
+    "name": "Business & Entrepreneurship",
+    "description": "Learn how companies find opportunities, create value, and turn ideas into sustainable businesses.",
+    "image": "assets/images/category_business.jpg"
+  },
+  {
+    "id": "finance",
+    "name": "Finance & Economics",
+    "description": "Make sense of money, markets, investing, inflation, and the forces shaping the global economy.",
+    "image": "assets/images/category_finance.jpg"
+  },
+  {
+    "id": "psychology",
+    "name": "Psychology & Human Behavior",
+    "description": "Explore why people think, feel, decide, remember, and behave the way they do.",
+    "image": "assets/images/category_psychology.jpg"
+  },
+  {
+    "id": "science-space",
+    "name": "Science & Space",
+    "description": "Explore the universe, the laws of nature, and the surprising science behind everyday life.",
+    "image": "assets/images/category_science_space.jpg"
+  },
+  {
+    "id": "health-wellness",
+    "name": "Health & Wellness",
+    "description": "Build a practical understanding of sleep, nutrition, movement, stress, and everyday wellbeing.",
+    "image": "assets/images/category_health.jpg"
+  },
+  {
+    "id": "design-creativity",
+    "name": "Design & Creativity",
+    "description": "Learn how visual thinking, storytelling, creativity, and design shape the world around us.",
+    "image": "assets/images/category_design.jpg"
+  },
+  {
+    "id": "communication",
+    "name": "Communication & Languages",
+    "description": "Become clearer, more persuasive, and more confident in how you communicate with others.",
+    "image": "assets/images/category_communication.jpg"
+  },
+  {
+    "id": "history-culture",
+    "name": "History & Culture",
+    "description": "Travel through ideas, civilizations, discoveries, and events that shaped the modern world.",
+    "image": "assets/images/category_history.jpg"
+  },
+  {
+    "id": "philosophy",
+    "name": "Philosophy & Critical Thinking",
+    "description": "Question assumptions, examine arguments, and learn to think more clearly about difficult problems.",
+    "image": "assets/images/category_philosophy.jpg"
+  },
+  {
+    "id": "career-productivity",
+    "name": "Career & Productivity",
+    "description": "Develop practical skills for learning faster, working smarter, and navigating your career.",
+    "image": "assets/images/category_career.jpg"
+  }
+]

@@ -37,9 +37,12 @@
 - Refactored the home screen into a controller plus extracted widget
   components for greeting, search, featured courses, and streak/XP while
   preserving the existing UI behavior
+- Added a non-blocking AI tutor backend layer with isolated models,
+  a Gemini service, a Riverpod-backed controller, and regression tests
+  that keep the existing lesson/course/quiz flows unchanged
 
 ## Not started (v2 scope, do not build yet)
-- AI tutor (screen, controller, gemini_service)
+- AI tutor screen/UI entry point
 - Audio feedback (audio_service.dart, assets/audio/*)
 - Animations (Lottie assets, confetti)
 - Analytics screen/service

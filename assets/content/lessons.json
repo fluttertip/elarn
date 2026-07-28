@@ -2,14 +2,1968 @@
   {
     "id": "flutter-01",
     "courseId": "flutter-foundations",
-    "title": "The widget mindset",
-    "summary": "Understand why Flutter UIs are composable trees.",
+    "title": "Why Is Everything in Flutter a Widget?",
+    "summary": "Discover the mental model behind Flutter's composable UI system and why widgets are the foundation of everything you build.",
     "minutes": 12,
     "sections": [
-      {"heading": "Everything is a widget", "body": "Flutter builds interfaces from composable widgets. Keep each widget focused on one visual or interaction responsibility."},
-      {"heading": "The production rule", "body": "Keep content and state outside presentation code. Widgets render data; repositories load data."}
+      {
+        "heading": "Everything is a widget",
+        "body": "Flutter builds interfaces from composable widgets. Text, buttons, layouts, screens, and even many structural elements are represented as widgets that describe what the interface should look like."
+      },
+      {
+        "heading": "The widget mindset",
+        "body": "Instead of thinking about a screen as one giant object, think of it as a tree of small responsibilities. Each widget can focus on one piece of the visual or interaction experience."
+      },
+      {
+        "heading": "Why composition matters",
+        "body": "Small reusable widgets make interfaces easier to understand, test, and change. The same building blocks can appear in multiple parts of an application."
+      }
     ],
-    "takeaways": ["Widgets describe UI", "Build small components", "Keep content out of widgets"],
+    "takeaways": [
+      "Flutter interfaces are built as widget trees",
+      "Small widgets are easier to reuse and maintain",
+      "Composition is a core Flutter design principle"
+    ],
     "quizId": "flutter-01-quiz"
+  },
+  {
+    "id": "flutter-02",
+    "courseId": "flutter-foundations",
+    "title": "What Actually Happens When You Move Between Screens?",
+    "summary": "Understand how navigation, routes, and shared application state work together to create predictable screen flows.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Screens need entry points",
+        "body": "A navigation system gives each screen a predictable way to be reached. Named routes and centralized routers make it easier to understand where users can go."
+      },
+      {
+        "heading": "Navigation is more than changing screens",
+        "body": "Moving between screens often involves passing identifiers, preserving state, and deciding what should happen when the user presses back."
+      },
+      {
+        "heading": "Keep navigation predictable",
+        "body": "Centralized routing reduces hidden navigation logic scattered throughout the application and makes deep links and future expansion easier."
+      }
+    ],
+    "takeaways": [
+      "Routes provide predictable navigation entry points",
+      "Navigation can carry context between screens",
+      "Centralized routing makes applications easier to maintain"
+    ],
+    "quizId": "flutter-02-quiz"
+  },
+  {
+    "id": "flutter-03",
+    "courseId": "flutter-foundations",
+    "title": "Why Does the Same App Look Different on Every Screen?",
+    "summary": "Learn how constraints, flexible layouts, and responsive design help Flutter applications adapt across phones, tablets, and desktops.",
+    "minutes": 18,
+    "sections": [
+      {
+        "heading": "Screens are not fixed canvases",
+        "body": "A Flutter application can run on devices with dramatically different dimensions. A layout that looks good on one phone may feel cramped or wasteful on a tablet."
+      },
+      {
+        "heading": "Think in constraints",
+        "body": "Flutter's layout system works by passing constraints down the widget tree and receiving sizes back. Understanding this relationship helps you build predictable interfaces."
+      },
+      {
+        "heading": "Adapt instead of shrinking",
+        "body": "Responsive design is not simply making everything smaller. Good layouts change spacing, arrangement, and sometimes navigation patterns based on available space."
+      }
+    ],
+    "takeaways": [
+      "Flutter layouts respond to constraints",
+      "Responsive design adapts structure as well as size",
+      "Flexible widgets help interfaces survive different screen sizes"
+    ],
+    "quizId": "flutter-03-quiz"
+  },
+
+  {
+    "id": "internet-01",
+    "courseId": "how-the-internet-works",
+    "title": "What Happens When You Type google.com?",
+    "summary": "Follow the journey from a URL in your browser to the server that eventually sends a webpage back to you.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "A URL is an address",
+        "body": "When you type a web address, your browser needs to discover where that service lives. The domain name provides a human-friendly identity for a destination on the internet."
+      },
+      {
+        "heading": "DNS finds the destination",
+        "body": "The Domain Name System translates human-readable domain names into IP addresses that computers use to locate network destinations."
+      },
+      {
+        "heading": "The request begins",
+        "body": "After discovering the destination, the browser communicates with the server using network protocols and requests the resources needed to construct the page."
+      }
+    ],
+    "takeaways": [
+      "URLs identify resources on the web",
+      "DNS translates domain names into network addresses",
+      "Browsers communicate with servers through network protocols"
+    ],
+    "quizId": "internet-01-quiz"
+  },
+  {
+    "id": "internet-02",
+    "courseId": "how-the-internet-works",
+    "title": "How Does Your Phone Find a Computer Across the World?",
+    "summary": "Explore packets, routers, IP addresses, and the infrastructure that allows data to travel across global networks.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Data travels in packets",
+        "body": "Large pieces of information are broken into smaller packets that can travel through networks and be reconstructed at their destination."
+      },
+      {
+        "heading": "Routers make decisions",
+        "body": "Routers examine network information and forward packets toward their destination. The path is determined by routing systems rather than one permanent physical route."
+      },
+      {
+        "heading": "The internet is a network of networks",
+        "body": "The global internet is made from interconnected networks operated by many organizations. They cooperate through shared protocols to move information between systems."
+      }
+    ],
+    "takeaways": [
+      "Internet data is transported in packets",
+      "Routers forward packets toward destinations",
+      "The internet connects many independent networks"
+    ],
+    "quizId": "internet-02-quiz"
+  },
+  {
+    "id": "internet-03",
+    "courseId": "how-the-internet-works",
+    "title": "What Really Happens When You Click Send?",
+    "summary": "Understand the journey of a message from your device through servers and networks to another person's device.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Your device creates a request",
+        "body": "When you send a message, an application packages the information and communicates with a remote service responsible for delivering or storing it."
+      },
+      {
+        "heading": "Servers coordinate the experience",
+        "body": "The service may authenticate you, store the message, determine the recipient, and notify another device that new information is available."
+      },
+      {
+        "heading": "Delivery is a system",
+        "body": "What feels like an instant action depends on many components working together: applications, servers, databases, networks, and notification systems."
+      }
+    ],
+    "takeaways": [
+      "Applications communicate with backend services",
+      "Servers coordinate storage and delivery",
+      "Modern apps depend on many systems working together"
+    ],
+    "quizId": "internet-03-quiz"
+  },
+
+  {
+    "id": "ai-01",
+    "courseId": "ai-explained",
+    "title": "Does AI Actually Understand Anything?",
+    "summary": "Explore what artificial intelligence means and why the word intelligence can be misleading when applied to machines.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Intelligence has many meanings",
+        "body": "Human intelligence involves perception, reasoning, memory, language, social understanding, and many other capabilities. AI systems usually specialize in narrower tasks."
+      },
+      {
+        "heading": "Learning from patterns",
+        "body": "Modern machine learning systems often improve by finding patterns in examples rather than receiving every rule explicitly written by a programmer."
+      },
+      {
+        "heading": "Useful does not mean human",
+        "body": "An AI system can perform impressive tasks without thinking or experiencing the world exactly as a human does. Understanding this distinction helps separate capability from consciousness."
+      }
+    ],
+    "takeaways": [
+      "AI is a broad field rather than one single technology",
+      "Machine learning systems learn patterns from data",
+      "Capability does not automatically imply human-like understanding"
+    ],
+    "quizId": "ai-01-quiz"
+  },
+  {
+    "id": "ai-02",
+    "courseId": "ai-explained",
+    "title": "How Does a Machine Learn From Examples?",
+    "summary": "Understand the basic idea behind machine learning, training data, patterns, predictions, and generalization.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Rules versus learning",
+        "body": "Traditional software often follows rules written by programmers. Machine learning systems can instead learn relationships from examples."
+      },
+      {
+        "heading": "Training is pattern discovery",
+        "body": "During training, a model adjusts internal parameters to reduce errors on examples. The goal is to learn useful patterns that can generalize to new inputs."
+      },
+      {
+        "heading": "The danger of memorization",
+        "body": "A model that performs well only on its training examples may have failed to generalize. Good machine learning requires evaluation on information the model did not directly train on."
+      }
+    ],
+    "takeaways": [
+      "Machine learning discovers patterns from examples",
+      "Training adjusts model parameters",
+      "Generalization is essential for useful models"
+    ],
+    "quizId": "ai-02-quiz"
+  },
+  {
+    "id": "ai-03",
+    "courseId": "ai-explained",
+    "title": "How Can a Language Model Predict Your Next Word?",
+    "summary": "Discover the basic ideas behind language models, tokens, probabilities, and why fluent text can emerge from prediction.",
+    "minutes": 18,
+    "sections": [
+      {
+        "heading": "Language becomes tokens",
+        "body": "Language models process text as sequences of tokens. A token can represent a word, part of a word, punctuation, or another text unit."
+      },
+      {
+        "heading": "Prediction drives generation",
+        "body": "A language model estimates probabilities for possible next tokens based on the context it has received."
+      },
+      {
+        "heading": "Simple prediction can produce complex behavior",
+        "body": "Although next-token prediction sounds simple, large models trained on enormous datasets can learn rich patterns in language, code, facts, and reasoning-like structures."
+      }
+    ],
+    "takeaways": [
+      "Language models process sequences of tokens",
+      "Generation involves predicting likely next tokens",
+      "Large-scale training can produce surprisingly complex capabilities"
+    ],
+    "quizId": "ai-03-quiz"
+  },
+
+  {
+    "id": "data-01",
+    "courseId": "data-thinking",
+    "title": "What Question Should You Ask the Data?",
+    "summary": "Learn why good analysis begins with a precise question rather than immediately opening a spreadsheet.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Data does not ask questions",
+        "body": "A dataset can contain thousands of measurements, but without a clear question it is easy to find patterns that are interesting but irrelevant."
+      },
+      {
+        "heading": "Define the decision",
+        "body": "A useful analytical question connects information to a decision. Knowing what action the analysis should support helps determine which data matters."
+      },
+      {
+        "heading": "Measure what matters",
+        "body": "Choosing the right metric requires understanding the underlying goal. A metric can improve while the real outcome gets worse if the wrong thing is measured."
+      }
+    ],
+    "takeaways": [
+      "Good analysis starts with a clear question",
+      "Data should support a decision or objective",
+      "Choosing metrics requires understanding the real goal"
+    ],
+    "quizId": "data-01-quiz"
+  },
+  {
+    "id": "data-02",
+    "courseId": "data-thinking",
+    "title": "Why Does Correlation Fool So Many People?",
+    "summary": "Understand the difference between correlation and causation and why patterns alone cannot prove that one thing causes another.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Patterns are not explanations",
+        "body": "Two variables can move together without one directly causing the other. They may be influenced by a third factor or connected by coincidence."
+      },
+      {
+        "heading": "Correlation is useful",
+        "body": "Correlation can reveal relationships worth investigating. It becomes dangerous when it is treated as proof of cause without additional evidence."
+      },
+      {
+        "heading": "Ask what else could explain it",
+        "body": "Good data thinking considers alternative explanations and seeks stronger evidence before making causal claims."
+      }
+    ],
+    "takeaways": [
+      "Correlation does not automatically imply causation",
+      "Patterns can reveal useful questions",
+      "Alternative explanations should always be considered"
+    ],
+    "quizId": "data-02-quiz"
+  },
+  {
+    "id": "data-03",
+    "courseId": "data-thinking",
+    "title": "Can a Beautiful Chart Still Lie?",
+    "summary": "Learn how visualizations can clarify information or accidentally manipulate perception through scales, selection, and presentation.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Charts shape perception",
+        "body": "People interpret visual differences quickly. The choice of scale, axis, and chart type can make small changes appear dramatic or hide meaningful differences."
+      },
+      {
+        "heading": "Context matters",
+        "body": "A chart without time ranges, comparison groups, or clear definitions can create a misleading impression even when every individual number is technically correct."
+      },
+      {
+        "heading": "Read before reacting",
+        "body": "Before accepting a visual conclusion, inspect the axes, units, population, timeframe, and source of the data."
+      }
+    ],
+    "takeaways": [
+      "Visualization choices affect interpretation",
+      "Context is essential for understanding data",
+      "Always inspect how a chart was constructed"
+    ],
+    "quizId": "data-03-quiz"
+  },
+
+  {
+    "id": "startup-01",
+    "courseId": "startup-thinking",
+    "title": "Why Do Great Ideas Often Fail?",
+    "summary": "Explore why a clever idea is not enough and why successful products usually begin with a painful, specific problem.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Ideas are hypotheses",
+        "body": "An idea represents a belief about what people want. Until real users demonstrate interest, the idea remains an assumption."
+      },
+      {
+        "heading": "Problems create demand",
+        "body": "Products become valuable when they solve meaningful problems. The strength of the problem often matters more than how impressive the technology appears."
+      },
+      {
+        "heading": "Start with curiosity",
+        "body": "Entrepreneurs should investigate what people struggle with, how they currently solve it, and why existing alternatives are insufficient."
+      }
+    ],
+    "takeaways": [
+      "Ideas are hypotheses until tested",
+      "Strong problems create opportunities",
+      "Understanding users comes before building"
+    ],
+    "quizId": "startup-01-quiz"
+  },
+  {
+    "id": "startup-02",
+    "courseId": "startup-thinking",
+    "title": "How Do You Know If Anyone Wants Your Product?",
+    "summary": "Learn how entrepreneurs validate ideas before investing excessive time and money into building them.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Validation reduces uncertainty",
+        "body": "Validation means gathering evidence about whether a problem exists and whether people care enough to change their behavior."
+      },
+      {
+        "heading": "Talk to real people",
+        "body": "Customer conversations, prototypes, landing pages, and small experiments can reveal what people actually do rather than what they claim they might do."
+      },
+      {
+        "heading": "Evidence beats enthusiasm",
+        "body": "Positive feedback is useful, but behavior is often stronger evidence. People who repeatedly use or pay for a solution demonstrate real demand."
+      }
+    ],
+    "takeaways": [
+      "Validation reduces business uncertainty",
+      "Real behavior is stronger evidence than opinions",
+      "Small experiments can test ideas cheaply"
+    ],
+    "quizId": "startup-02-quiz"
+  },
+  {
+    "id": "startup-03",
+    "courseId": "startup-thinking",
+    "title": "What Does Product-Market Fit Actually Feel Like?",
+    "summary": "Understand why some products struggle for attention while others become difficult for users to live without.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Fit means strong demand",
+        "body": "Product-market fit describes a situation where a product solves an important problem for a specific group of users and demand becomes increasingly evident."
+      },
+      {
+        "heading": "Retention is a signal",
+        "body": "If users repeatedly return because the product provides ongoing value, that behavior can be stronger evidence than initial curiosity."
+      },
+      {
+        "heading": "Growth follows value",
+        "body": "Products that consistently deliver value can develop organic growth through referrals, repeat usage, and increasing demand."
+      }
+    ],
+    "takeaways": [
+      "Product-market fit requires meaningful user value",
+      "Retention is a powerful signal",
+      "Sustainable growth usually follows strong product value"
+    ],
+    "quizId": "startup-03-quiz"
+  },
+
+  {
+    "id": "marketing-01",
+    "courseId": "marketing-psychology",
+    "title": "Why Do Some Brands Live Inside Your Head?",
+    "summary": "Explore how memory, repetition, emotion, and distinctive signals make certain brands easier to remember.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Attention is scarce",
+        "body": "People encounter enormous amounts of information every day. Brands compete to become recognizable in a crowded mental environment."
+      },
+      {
+        "heading": "Distinctive signals matter",
+        "body": "Colors, shapes, sounds, phrases, and visual identities can help people recognize a brand quickly."
+      },
+      {
+        "heading": "Memory favors meaning",
+        "body": "Information connected to emotion, stories, or existing knowledge is often easier to remember than isolated facts."
+      }
+    ],
+    "takeaways": [
+      "Brands compete for limited attention",
+      "Distinctive signals improve recognition",
+      "Emotion and meaning strengthen memory"
+    ],
+    "quizId": "marketing-01-quiz"
+  },
+  {
+    "id": "marketing-02",
+    "courseId": "marketing-psychology",
+    "title": "Why Does Scarcity Make Things Feel More Valuable?",
+    "summary": "Understand how perceived scarcity influences attention, urgency, and consumer decisions.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Limited availability changes perception",
+        "body": "When people believe something is difficult to obtain, they may perceive it as more valuable or desirable."
+      },
+      {
+        "heading": "Urgency changes decisions",
+        "body": "Time-limited offers can encourage action by reducing the amount of time available for deliberation."
+      },
+      {
+        "heading": "Scarcity can be manipulated",
+        "body": "Artificial countdowns or misleading claims of limited supply can create pressure without representing genuine scarcity."
+      }
+    ],
+    "takeaways": [
+      "Perceived scarcity can influence value judgments",
+      "Urgency can change decision behavior",
+      "Scarcity claims should be evaluated critically"
+    ],
+    "quizId": "marketing-02-quiz"
+  },
+  {
+    "id": "marketing-03",
+    "courseId": "marketing-psychology",
+    "title": "Why Do Stories Sell Better Than Facts?",
+    "summary": "Discover how narrative structure helps people understand, remember, and emotionally connect with information.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Stories create structure",
+        "body": "A story gives information a beginning, conflict, change, and outcome. This structure helps audiences organize complex ideas."
+      },
+      {
+        "heading": "People remember meaning",
+        "body": "Stories connect facts to people and consequences, making abstract information easier to understand and recall."
+      },
+      {
+        "heading": "Good marketing creates context",
+        "body": "Effective storytelling does not replace truth. It gives true information a structure that helps people understand why it matters."
+      }
+    ],
+    "takeaways": [
+      "Stories organize information",
+      "Narratives can make facts more memorable",
+      "Effective storytelling connects information to meaning"
+    ],
+    "quizId": "marketing-03-quiz"
+  },
+
+  {
+    "id": "money-01",
+    "courseId": "money-from-scratch",
+    "title": "Why Does Money Grow When You Do Nothing?",
+    "summary": "Understand compound growth and why time can be one of the most powerful forces in long-term finance.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Growth can build on growth",
+        "body": "Compound growth occurs when returns are added to the original amount and future returns are calculated on the larger balance."
+      },
+      {
+        "heading": "Time changes the equation",
+        "body": "Long periods allow repeated growth to accumulate. The effect can become increasingly significant as the number of compounding periods increases."
+      },
+      {
+        "heading": "Compounding works both ways",
+        "body": "Compound effects can also increase the cost of debt when interest accumulates over time."
+      }
+    ],
+    "takeaways": [
+      "Compound growth builds on previous growth",
+      "Time can dramatically affect long-term outcomes",
+      "Compounding can increase both investments and debt"
+    ],
+    "quizId": "money-01-quiz"
+  },
+  {
+    "id": "money-02",
+    "courseId": "money-from-scratch",
+    "title": "Why Is Saving Money Harder Than It Sounds?",
+    "summary": "Explore behavioral habits, automatic spending, lifestyle inflation, and why financial systems often matter more than willpower.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Money disappears through defaults",
+        "body": "Recurring subscriptions, convenience spending, and automatic purchases can quietly consume income without feeling significant individually."
+      },
+      {
+        "heading": "Lifestyle expands with income",
+        "body": "As income rises, people often increase spending as well. This can make higher earnings feel less financially transformative than expected."
+      },
+      {
+        "heading": "Systems beat willpower",
+        "body": "Automating savings and creating clear spending boundaries can reduce the number of decisions required to maintain financial habits."
+      }
+    ],
+    "takeaways": [
+      "Small recurring expenses can accumulate",
+      "Lifestyle inflation can reduce savings growth",
+      "Automatic systems can make financial habits easier"
+    ],
+    "quizId": "money-02-quiz"
+  },
+  {
+    "id": "money-03",
+    "courseId": "money-from-scratch",
+    "title": "Why Can Higher Returns Mean Higher Risk?",
+    "summary": "Learn the relationship between risk, uncertainty, diversification, and potential returns.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Returns are compensation for uncertainty",
+        "body": "Investments with uncertain outcomes may offer higher potential returns because investors require compensation for taking additional risk."
+      },
+      {
+        "heading": "Risk is not the same as volatility",
+        "body": "Price movement can be uncomfortable, but true investment risk also involves the possibility of permanent loss or failing to achieve a financial goal."
+      },
+      {
+        "heading": "Diversification spreads exposure",
+        "body": "Owning different assets can reduce the impact of one investment performing poorly, although diversification cannot eliminate all risk."
+      }
+    ],
+    "takeaways": [
+      "Potential returns are connected to uncertainty",
+      "Volatility and permanent loss are different concepts",
+      "Diversification can reduce concentration risk"
+    ],
+    "quizId": "money-03-quiz"
+  },
+
+  {
+    "id": "economics-01",
+    "courseId": "economics-everyday-life",
+    "title": "Why Does Your Favorite Coffee Cost More Now?",
+    "summary": "Use supply, demand, costs, and competition to understand why prices change.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Prices coordinate behavior",
+        "body": "Prices communicate information about scarcity, demand, and the cost of producing or providing something."
+      },
+      {
+        "heading": "Demand can push prices upward",
+        "body": "When many people want something while supply is limited, sellers may be able to charge higher prices."
+      },
+      {
+        "heading": "Costs matter too",
+        "body": "Wages, transportation, materials, rent, and energy can all influence the cost of producing a product."
+      }
+    ],
+    "takeaways": [
+      "Prices reflect supply and demand conditions",
+      "Production costs influence pricing",
+      "Markets respond to changing incentives"
+    ],
+    "quizId": "economics-01-quiz"
+  },
+  {
+    "id": "economics-02",
+    "courseId": "economics-everyday-life",
+    "title": "Why Do People Stand in Line?",
+    "summary": "Discover how scarcity, incentives, and opportunity cost influence everyday decisions.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Time has value",
+        "body": "Waiting in a queue has an opportunity cost because that time could have been used for another activity."
+      },
+      {
+        "heading": "Queues reveal scarcity",
+        "body": "Long queues often appear when demand exceeds the immediate capacity of a service or resource."
+      },
+      {
+        "heading": "People respond to incentives",
+        "body": "Prices, convenience, discounts, and waiting times influence how people choose between alternatives."
+      }
+    ],
+    "takeaways": [
+      "Time has an opportunity cost",
+      "Queues often signal constrained capacity",
+      "People respond to incentives"
+    ],
+    "quizId": "economics-02-quiz"
+  },
+  {
+    "id": "economics-03",
+    "courseId": "economics-everyday-life",
+    "title": "What Are You Giving Up When You Choose?",
+    "summary": "Understand opportunity cost and why every decision involves trade-offs.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Every choice has alternatives",
+        "body": "Choosing one option means giving up the opportunity to use the same time, money, or resources elsewhere."
+      },
+      {
+        "heading": "The cost is not always money",
+        "body": "Opportunity cost can involve time, experiences, relationships, learning, or other benefits that were sacrificed."
+      },
+      {
+        "heading": "Better decisions reveal trade-offs",
+        "body": "Thinking about what you are giving up can make choices clearer, especially when resources are limited."
+      }
+    ],
+    "takeaways": [
+      "Every decision involves trade-offs",
+      "Opportunity cost includes more than money",
+      "Good decisions consider alternatives"
+    ],
+    "quizId": "economics-03-quiz"
+  },
+
+  {
+    "id": "decision-01",
+    "courseId": "psychology-of-decisions",
+    "title": "Why Do Smart People Make Irrational Decisions?",
+    "summary": "Explore cognitive biases and why intelligence does not automatically protect people from predictable reasoning errors.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Brains use shortcuts",
+        "body": "Human reasoning often relies on mental shortcuts that allow fast decisions without analyzing every detail."
+      },
+      {
+        "heading": "Shortcuts can misfire",
+        "body": "The same shortcuts that help people act quickly can produce systematic errors when circumstances differ from those the shortcut evolved or developed for."
+      },
+      {
+        "heading": "Awareness helps but does not eliminate bias",
+        "body": "Learning about biases can improve decision awareness, but knowing about a bias does not guarantee immunity from it."
+      }
+    ],
+    "takeaways": [
+      "Humans rely on cognitive shortcuts",
+      "Mental shortcuts can create systematic biases",
+      "Awareness improves but does not eliminate bias"
+    ],
+    "quizId": "decision-01-quiz"
+  },
+  {
+    "id": "decision-02",
+    "courseId": "psychology-of-decisions",
+    "title": "Why Does the First Number You Hear Affect You?",
+    "summary": "Understand anchoring and how initial information can influence later judgments.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "The first number becomes a reference",
+        "body": "When people encounter an initial value, later judgments may be influenced by that starting point even when it is arbitrary."
+      },
+      {
+        "heading": "Negotiations reveal anchoring",
+        "body": "The first price proposed in a negotiation can influence the range people consider reasonable."
+      },
+      {
+        "heading": "Anchors are not always accurate",
+        "body": "A reference point can shape judgment even when it has little logical connection to the true value."
+      }
+    ],
+    "takeaways": [
+      "Initial information can influence later judgments",
+      "Anchoring affects negotiation and estimation",
+      "Reference points are not always reliable"
+    ],
+    "quizId": "decision-02-quiz"
+  },
+  {
+    "id": "decision-03",
+    "courseId": "psychology-of-decisions",
+    "title": "Why Do We Keep Doing Things That Clearly Don't Work?",
+    "summary": "Explore sunk costs and why previous investments can distort future decisions.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Past costs are already gone",
+        "body": "A sunk cost is a resource that has already been spent and cannot be recovered."
+      },
+      {
+        "heading": "Emotion makes sunk costs powerful",
+        "body": "People may continue investing in failing projects because abandoning them feels like admitting that previous effort was wasted."
+      },
+      {
+        "heading": "Future decisions should focus forward",
+        "body": "A rational decision should compare the future costs and benefits of each option rather than trying to justify what has already been spent."
+      }
+    ],
+    "takeaways": [
+      "Sunk costs cannot be recovered",
+      "Emotional attachment can distort decisions",
+      "Future choices should focus on future costs and benefits"
+    ],
+    "quizId": "decision-03-quiz"
+  },
+
+  {
+    "id": "memory-01",
+    "courseId": "memory-and-learning",
+    "title": "Why Do You Forget What You Studied Yesterday?",
+    "summary": "Understand forgetting, memory decay, interference, and why simply rereading information often produces weak retention.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Memory is not a recording",
+        "body": "Human memory is reconstructive. Information can weaken, change, or become harder to retrieve over time."
+      },
+      {
+        "heading": "Forgetting is normal",
+        "body": "Without retrieval or meaningful connections, memories can become increasingly difficult to access."
+      },
+      {
+        "heading": "Retrieval strengthens access",
+        "body": "Trying to recall information can strengthen the ability to retrieve it later, especially when practice is distributed over time."
+      }
+    ],
+    "takeaways": [
+      "Memory is reconstructive rather than a perfect recording",
+      "Forgetting is a normal part of memory",
+      "Retrieval practice can strengthen recall"
+    ],
+    "quizId": "memory-01-quiz"
+  },
+  {
+    "id": "memory-02",
+    "courseId": "memory-and-learning",
+    "title": "Why Does Your Brain Remember Some Things Forever?",
+    "summary": "Explore emotion, meaning, attention, and repetition and how they influence long-term memory.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Attention is the gateway",
+        "body": "Information that receives little attention is less likely to be encoded strongly into memory."
+      },
+      {
+        "heading": "Emotion changes memory",
+        "body": "Emotionally significant experiences can receive stronger attention and become more memorable, although emotional memories are not necessarily perfectly accurate."
+      },
+      {
+        "heading": "Connections create retrieval paths",
+        "body": "Information connected to existing knowledge gives the brain more pathways for retrieving it later."
+      }
+    ],
+    "takeaways": [
+      "Attention influences memory formation",
+      "Emotion can strengthen memory",
+      "Connections to existing knowledge improve retrieval"
+    ],
+    "quizId": "memory-02-quiz"
+  },
+  {
+    "id": "memory-03",
+    "courseId": "memory-and-learning",
+    "title": "Can You Train Yourself to Learn Faster?",
+    "summary": "Discover how retrieval, spacing, feedback, and deliberate practice can improve learning efficiency.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Testing is learning",
+        "body": "Attempting to retrieve information from memory can strengthen later recall more effectively than repeatedly rereading the same material."
+      },
+      {
+        "heading": "Spacing beats cramming",
+        "body": "Distributing practice across multiple sessions gives the brain repeated opportunities to retrieve information after some forgetting has occurred."
+      },
+      {
+        "heading": "Feedback closes the loop",
+        "body": "Feedback helps learners identify errors and adjust their understanding before incorrect ideas become deeply established."
+      }
+    ],
+    "takeaways": [
+      "Retrieval practice strengthens learning",
+      "Spacing improves long-term retention",
+      "Feedback helps correct misconceptions"
+    ],
+    "quizId": "memory-03-quiz"
+  },
+
+  {
+    "id": "universe-01",
+    "courseId": "cosmos-and-universe",
+    "title": "How Big Is the Universe, Really?",
+    "summary": "Develop an intuition for cosmic scale, light-years, galaxies, and the enormous distances separating objects in space.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Space is measured in light-years",
+        "body": "A light-year is a unit of distance representing how far light travels in one year. It helps describe distances that are far too large for ordinary units."
+      },
+      {
+        "heading": "Galaxies are enormous systems",
+        "body": "A galaxy contains stars, gas, dust, and dark matter bound together by gravity. Our solar system exists inside the Milky Way."
+      },
+      {
+        "heading": "Looking far away means looking back in time",
+        "body": "Because light takes time to travel, observing distant objects means seeing them as they appeared in the past."
+      }
+    ],
+    "takeaways": [
+      "Light-years measure enormous distances",
+      "Galaxies contain billions of stars and other matter",
+      "Distant observations show earlier moments in cosmic history"
+    ],
+    "quizId": "universe-01-quiz"
+  },
+  {
+    "id": "universe-02",
+    "courseId": "cosmos-and-universe",
+    "title": "What Would Happen If You Fell Into a Black Hole?",
+    "summary": "Explore event horizons, extreme gravity, and why black holes are among the strangest objects in the universe.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Gravity can become extreme",
+        "body": "A black hole forms when matter becomes concentrated enough that its gravitational field creates a region from which light cannot escape."
+      },
+      {
+        "heading": "The event horizon",
+        "body": "The event horizon marks a boundary beyond which escape is no longer possible according to our current understanding of physics."
+      },
+      {
+        "heading": "The view depends on perspective",
+        "body": "An observer far away and an object falling toward a black hole do not describe the experience in exactly the same way because of relativistic effects."
+      }
+    ],
+    "takeaways": [
+      "Black holes create regions of extreme gravity",
+      "The event horizon marks the boundary of no escape",
+      "Relativity changes how different observers describe the experience"
+    ],
+    "quizId": "universe-02-quiz"
+  },
+  {
+    "id": "universe-03",
+    "courseId": "cosmos-and-universe",
+    "title": "How Did Everything Begin?",
+    "summary": "Explore the evidence behind the Big Bang model and what scientists can and cannot say about the beginning of the universe.",
+    "minutes": 18,
+    "sections": [
+      {
+        "heading": "The universe is expanding",
+        "body": "Observations show that distant galaxies are generally moving away from one another as space itself expands."
+      },
+      {
+        "heading": "The cosmic microwave background",
+        "body": "A faint background radiation fills the universe and provides important evidence about its hot, dense early state."
+      },
+      {
+        "heading": "Science has boundaries",
+        "body": "The Big Bang model describes the early evolution of the observable universe, but questions about what, if anything, preceded it remain active areas of scientific and philosophical discussion."
+      }
+    ],
+    "takeaways": [
+      "The universe is expanding",
+      "Cosmic background radiation provides evidence about the early universe",
+      "Some questions about cosmic origins remain unresolved"
+    ],
+    "quizId": "universe-03-quiz"
+  },
+
+  {
+    "id": "everyday-01",
+    "courseId": "science-of-everyday-life",
+    "title": "Why Does Your Phone Get Hot?",
+    "summary": "Explore energy, electrical resistance, processors, batteries, and why modern devices turn some energy into heat.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Energy changes form",
+        "body": "Electronic devices use electrical energy to perform computations, illuminate displays, transmit signals, and power other processes."
+      },
+      {
+        "heading": "Some energy becomes heat",
+        "body": "Real systems are not perfectly efficient. Some of the energy used by electronic components ultimately becomes thermal energy."
+      },
+      {
+        "heading": "More work often means more heat",
+        "body": "Demanding applications can increase processor activity and power consumption, which may cause devices to produce more heat."
+      }
+    ],
+    "takeaways": [
+      "Electrical energy is transformed inside devices",
+      "Some energy becomes heat",
+      "Heavy workloads can increase power consumption"
+    ],
+    "quizId": "everyday-01-quiz"
+  },
+  {
+    "id": "everyday-02",
+    "courseId": "science-of-everyday-life",
+    "title": "Why Does Food Taste Different When You're Sick?",
+    "summary": "Discover how smell, taste, congestion, and the brain combine to create the experience of flavor.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Flavor is more than taste",
+        "body": "The experience of flavor combines signals from taste receptors, smell receptors, texture, temperature, and other sensory systems."
+      },
+      {
+        "heading": "Smell carries information",
+        "body": "Much of what people describe as flavor comes from the sense of smell. Congestion can reduce the movement of odor molecules to smell receptors."
+      },
+      {
+        "heading": "The brain combines signals",
+        "body": "The brain integrates sensory information to create the experience we call flavor rather than receiving a single isolated signal."
+      }
+    ],
+    "takeaways": [
+      "Flavor combines multiple senses",
+      "Smell plays a major role in flavor perception",
+      "The brain integrates sensory information"
+    ],
+    "quizId": "everyday-02-quiz"
+  },
+  {
+    "id": "everyday-03",
+    "courseId": "science-of-everyday-life",
+    "title": "Why Does Weather Change So Quickly?",
+    "summary": "Understand how atmospheric pressure, temperature, moisture, and moving air create changing weather conditions.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "The atmosphere is constantly moving",
+        "body": "Uneven heating of Earth's surface creates differences in temperature and pressure that drive atmospheric movement."
+      },
+      {
+        "heading": "Air carries moisture",
+        "body": "Water evaporates into the atmosphere and can later condense into clouds and precipitation when conditions change."
+      },
+      {
+        "heading": "Weather is local and dynamic",
+        "body": "Different air masses interact as they move, creating changing conditions across relatively small distances."
+      }
+    ],
+    "takeaways": [
+      "Uneven heating drives atmospheric movement",
+      "Moisture moves through evaporation and condensation",
+      "Interactions between air masses create changing weather"
+    ],
+    "quizId": "everyday-03-quiz"
+  },
+
+  {
+    "id": "sleep-01",
+    "courseId": "sleep-science",
+    "title": "Why Does Your Brain Need Sleep?",
+    "summary": "Explore the biological functions of sleep and why the brain treats sleep as essential rather than optional downtime.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Sleep is biologically active",
+        "body": "Sleep is not simply a period when the brain shuts down. Different sleep stages are associated with distinct patterns of brain activity and physiological processes."
+      },
+      {
+        "heading": "Memory and learning",
+        "body": "Sleep plays an important role in memory processing and learning, helping the brain organize information acquired during waking hours."
+      },
+      {
+        "heading": "Recovery matters",
+        "body": "Sleep supports many processes involved in physical recovery, immune function, and overall health."
+      }
+    ],
+    "takeaways": [
+      "Sleep involves active biological processes",
+      "Sleep supports memory and learning",
+      "Sleep contributes to physical and mental wellbeing"
+    ],
+    "quizId": "sleep-01-quiz"
+  },
+  {
+    "id": "sleep-02",
+    "courseId": "sleep-science",
+    "title": "Why Does Your Body Know When It's Night?",
+    "summary": "Understand circadian rhythms, light exposure, and the internal timing systems that regulate sleep and wakefulness.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Your body has an internal clock",
+        "body": "Circadian rhythms coordinate biological processes across approximately 24-hour cycles."
+      },
+      {
+        "heading": "Light is a powerful signal",
+        "body": "Light exposure helps synchronize the internal clock with the external environment and influences the timing of sleep-related processes."
+      },
+      {
+        "heading": "Modern life can shift the clock",
+        "body": "Irregular schedules, late-night light exposure, and changing routines can disrupt the alignment between internal rhythms and daily activities."
+      }
+    ],
+    "takeaways": [
+      "Circadian rhythms regulate daily biological timing",
+      "Light helps synchronize the body clock",
+      "Irregular schedules can disrupt biological timing"
+    ],
+    "quizId": "sleep-02-quiz"
+  },
+  {
+    "id": "sleep-03",
+    "courseId": "sleep-science",
+    "title": "Why Is Falling Asleep Sometimes So Difficult?",
+    "summary": "Explore sleep pressure, arousal, habits, and environmental factors that influence the transition from wakefulness to sleep.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Sleep pressure builds",
+        "body": "The longer a person remains awake, the stronger the biological drive for sleep generally becomes."
+      },
+      {
+        "heading": "Arousal can interfere",
+        "body": "Stress, intense stimulation, and racing thoughts can increase mental or physiological arousal when the body should be transitioning toward sleep."
+      },
+      {
+        "heading": "Environment matters",
+        "body": "Light, noise, temperature, and inconsistent routines can influence how easily someone transitions into sleep."
+      }
+    ],
+    "takeaways": [
+      "Sleep pressure increases with time awake",
+      "Stress and arousal can interfere with sleep",
+      "Environment and routine influence sleep"
+    ],
+    "quizId": "sleep-03-quiz"
+  },
+
+  {
+    "id": "nutrition-01",
+    "courseId": "nutrition-decoded",
+    "title": "What Does Your Body Actually Get From Food?",
+    "summary": "Understand macronutrients, micronutrients, energy, and why food provides much more than calories.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Food provides energy",
+        "body": "Carbohydrates, fats, and proteins can provide energy, while the body also uses food-derived materials for growth, repair, and physiological processes."
+      },
+      {
+        "heading": "Micronutrients matter",
+        "body": "Vitamins and minerals are needed in smaller amounts but play essential roles in many biological functions."
+      },
+      {
+        "heading": "Nutrition is a system",
+        "body": "Health outcomes depend on overall dietary patterns rather than one isolated food or nutrient."
+      }
+    ],
+    "takeaways": [
+      "Food provides energy and essential nutrients",
+      "Micronutrients support important biological functions",
+      "Overall dietary patterns matter more than individual foods"
+    ],
+    "quizId": "nutrition-01-quiz"
+  },
+  {
+    "id": "nutrition-02",
+    "courseId": "nutrition-decoded",
+    "title": "Why Is Protein Such a Big Deal?",
+    "summary": "Explore what proteins do in the body and why protein needs differ between individuals.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Proteins are building materials",
+        "body": "Proteins are made from amino acids and are involved in muscles, enzymes, hormones, transport, and many other biological functions."
+      },
+      {
+        "heading": "Needs vary",
+        "body": "Protein requirements depend on factors such as body size, age, activity, health status, and physiological goals."
+      },
+      {
+        "heading": "Food sources differ",
+        "body": "Protein can come from animal and plant foods, with different foods providing different combinations of amino acids and other nutrients."
+      }
+    ],
+    "takeaways": [
+      "Proteins perform many biological functions",
+      "Protein requirements vary between individuals",
+      "Many different foods can provide protein"
+    ],
+    "quizId": "nutrition-02-quiz"
+  },
+  {
+    "id": "nutrition-03",
+    "courseId": "nutrition-decoded",
+    "title": "Why Is Nutrition Advice So Confusing?",
+    "summary": "Learn how to evaluate nutrition claims, distinguish evidence from marketing, and avoid simplistic health conclusions.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Nutrition research is complicated",
+        "body": "Diet is difficult to study because people eat complex combinations of foods and many lifestyle factors influence health outcomes."
+      },
+      {
+        "heading": "Association is not proof",
+        "body": "Observational studies can identify relationships but cannot always establish that one dietary behavior directly caused an outcome."
+      },
+      {
+        "heading": "Beware of absolute claims",
+        "body": "Claims that one food is universally harmful or one ingredient is a miracle solution should be evaluated carefully against the quality of available evidence."
+      }
+    ],
+    "takeaways": [
+      "Nutrition research has many confounding factors",
+      "Association does not automatically establish causation",
+      "Extreme health claims deserve careful scrutiny"
+    ],
+    "quizId": "nutrition-03-quiz"
+  },
+
+  {
+    "id": "design-01",
+    "courseId": "design-thinking",
+    "title": "Why Do Designers Start With Problems Instead of Solutions?",
+    "summary": "Discover why understanding people and their problems is often more valuable than immediately designing a solution.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Solutions can be seductive",
+        "body": "A clever solution can feel exciting before anyone has confirmed whether the underlying problem is important."
+      },
+      {
+        "heading": "Observe real behavior",
+        "body": "Designers investigate how people currently behave, what frustrates them, and what workarounds they have developed."
+      },
+      {
+        "heading": "Define the real problem",
+        "body": "A well-framed problem identifies the user's underlying need rather than simply describing a desired feature."
+      }
+    ],
+    "takeaways": [
+      "Good design begins with understanding problems",
+      "Real behavior reveals hidden needs",
+      "Problem framing influences solution quality"
+    ],
+    "quizId": "design-01-quiz"
+  },
+  {
+    "id": "design-02",
+    "courseId": "design-thinking",
+    "title": "Why Do Designers Build Ugly Prototypes?",
+    "summary": "Understand why early prototypes are intentionally rough and how they help teams learn before investing heavily.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "A prototype is a question",
+        "body": "A prototype allows designers to test an assumption about how an experience might work."
+      },
+      {
+        "heading": "Rough is useful",
+        "body": "Low-fidelity prototypes are fast to change. Their simplicity encourages experimentation before teams become emotionally attached to a polished solution."
+      },
+      {
+        "heading": "Learning is the goal",
+        "body": "The purpose of prototyping is not to create a finished product. It is to discover what works and what needs to change."
+      }
+    ],
+    "takeaways": [
+      "Prototypes test assumptions",
+      "Low-fidelity designs are easier to change",
+      "The goal of prototyping is learning"
+    ],
+    "quizId": "design-02-quiz"
+  },
+  {
+    "id": "design-03",
+    "courseId": "design-thinking",
+    "title": "What Makes an App Feel Effortless?",
+    "summary": "Explore affordances, feedback, hierarchy, consistency, and why good interface design often feels invisible.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Users need clear signals",
+        "body": "Good interfaces communicate what can be interacted with and what will happen when an action is taken."
+      },
+      {
+        "heading": "Feedback builds confidence",
+        "body": "Visual and behavioral feedback helps users understand whether their actions succeeded, failed, or are still processing."
+      },
+      {
+        "heading": "Consistency reduces mental effort",
+        "body": "When similar interactions behave similarly, users can transfer what they already know instead of learning every screen from scratch."
+      }
+    ],
+    "takeaways": [
+      "Interfaces should communicate possible actions",
+      "Feedback helps users understand system responses",
+      "Consistency reduces cognitive load"
+    ],
+    "quizId": "design-03-quiz"
+  },
+
+  {
+    "id": "visual-01",
+    "courseId": "visual-storytelling",
+    "title": "Why Does Your Eye Know Where to Look First?",
+    "summary": "Learn how visual hierarchy directs attention through size, contrast, position, spacing, and emphasis.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Not everything can be equally important",
+        "body": "Visual hierarchy helps viewers understand which elements deserve attention first and which information can be processed later."
+      },
+      {
+        "heading": "Contrast creates emphasis",
+        "body": "Differences in size, weight, color, or spacing can make one element stand out from another."
+      },
+      {
+        "heading": "Space creates structure",
+        "body": "Whitespace separates groups of information and prevents interfaces from becoming visually overwhelming."
+      }
+    ],
+    "takeaways": [
+      "Visual hierarchy directs attention",
+      "Contrast creates emphasis",
+      "Whitespace helps organize information"
+    ],
+    "quizId": "visual-01-quiz"
+  },
+  {
+    "id": "visual-02",
+    "courseId": "visual-storytelling",
+    "title": "Why Does Contrast Make Designs Feel Alive?",
+    "summary": "Explore how contrast creates focus, hierarchy, rhythm, and visual interest.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Contrast creates difference",
+        "body": "Contrast occurs when visual elements differ in meaningful ways, such as size, brightness, weight, or shape."
+      },
+      {
+        "heading": "Difference creates hierarchy",
+        "body": "Strong contrast can separate primary actions from secondary information and help users understand importance."
+      },
+      {
+        "heading": "Too much contrast creates noise",
+        "body": "If everything demands attention, nothing feels important. Effective design uses contrast selectively."
+      }
+    ],
+    "takeaways": [
+      "Contrast helps distinguish elements",
+      "Hierarchy depends on meaningful differences",
+      "Excessive contrast can create visual noise"
+    ],
+    "quizId": "visual-02-quiz"
+  },
+  {
+    "id": "visual-03",
+    "courseId": "visual-storytelling",
+    "title": "How Can One Image Tell an Entire Story?",
+    "summary": "Discover how composition, context, symbolism, and visual sequencing communicate ideas without relying entirely on words.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Composition creates relationships",
+        "body": "Where objects appear within an image affects how viewers interpret their relationships and importance."
+      },
+      {
+        "heading": "Context changes meaning",
+        "body": "The same visual element can communicate different ideas depending on surrounding information."
+      },
+      {
+        "heading": "Visual stories create a journey",
+        "body": "A sequence of images can guide viewers through events, emotions, or explanations by controlling what they see and when they see it."
+      }
+    ],
+    "takeaways": [
+      "Composition influences interpretation",
+      "Context changes visual meaning",
+      "Sequences can guide audiences through stories"
+    ],
+    "quizId": "visual-03-quiz"
+  },
+
+  {
+    "id": "speak-01",
+    "courseId": "speak-with-impact",
+    "title": "Why Do Some People Make You Want to Listen?",
+    "summary": "Explore clarity, structure, relevance, and delivery and why compelling communication begins before someone speaks.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Attention needs a reason",
+        "body": "People pay attention when they believe information is relevant, useful, surprising, or emotionally meaningful."
+      },
+      {
+        "heading": "Structure reduces effort",
+        "body": "A clear beginning, middle, and conclusion helps listeners follow complex ideas."
+      },
+      {
+        "heading": "Delivery changes perception",
+        "body": "Pacing, pauses, emphasis, and vocal variation can influence how audiences interpret and remember information."
+      }
+    ],
+    "takeaways": [
+      "Relevance helps capture attention",
+      "Structure makes ideas easier to follow",
+      "Delivery influences how messages are perceived"
+    ],
+    "quizId": "speak-01-quiz"
+  },
+  {
+    "id": "speak-02",
+    "courseId": "speak-with-impact",
+    "title": "How Do You Explain a Complex Idea Simply?",
+    "summary": "Learn how to reduce cognitive load without removing the important substance from an explanation.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Start with the mental model",
+        "body": "Before introducing details, give listeners a simple framework for understanding how the pieces fit together."
+      },
+      {
+        "heading": "Use concrete examples",
+        "body": "Examples translate abstract concepts into situations that audiences can visualize and connect to existing experience."
+      },
+      {
+        "heading": "Layer complexity",
+        "body": "A strong explanation starts simple and introduces deeper detail only when the audience has the foundation needed to understand it."
+      }
+    ],
+    "takeaways": [
+      "Mental models make complex topics easier to understand",
+      "Examples connect abstract ideas to experience",
+      "Complexity should be introduced progressively"
+    ],
+    "quizId": "speak-02-quiz"
+  },
+  {
+    "id": "speak-03",
+    "courseId": "speak-with-impact",
+    "title": "Why Do Great Presentations Feel Like Stories?",
+    "summary": "Understand how narrative structure can transform a presentation from a list of facts into a memorable journey.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Every audience starts somewhere",
+        "body": "A presentation should establish what the audience currently understands before introducing a new perspective."
+      },
+      {
+        "heading": "Create tension",
+        "body": "Questions, problems, contradictions, and uncertainty create a reason for the audience to continue paying attention."
+      },
+      {
+        "heading": "End with meaning",
+        "body": "A strong conclusion connects the information back to why it matters and what the audience should remember or do."
+      }
+    ],
+    "takeaways": [
+      "Presentations can use narrative structure",
+      "Questions and problems create attention",
+      "Conclusions should connect information to meaning"
+    ],
+    "quizId": "speak-03-quiz"
+  },
+
+  {
+    "id": "conversation-01",
+    "courseId": "art-of-conversation",
+    "title": "Why Is Listening Harder Than Talking?",
+    "summary": "Explore active listening, attention, assumptions, and why truly hearing another person requires more than staying silent.",
+    "minutes": 14,
+    "sections": [
+      {
+        "heading": "Listening is active",
+        "body": "Effective listening involves paying attention, interpreting meaning, noticing emotion, and checking whether your understanding is accurate."
+      },
+      {
+        "heading": "We prepare our response",
+        "body": "People often spend part of a conversation planning what they will say next, which reduces attention to what the other person is actually communicating."
+      },
+      {
+        "heading": "Reflect before reacting",
+        "body": "Paraphrasing or asking clarifying questions can prevent misunderstandings and demonstrate that you are trying to understand."
+      }
+    ],
+    "takeaways": [
+      "Effective listening requires active attention",
+      "Planning responses can reduce listening quality",
+      "Clarifying questions reduce misunderstandings"
+    ],
+    "quizId": "conversation-01-quiz"
+  },
+  {
+    "id": "conversation-02",
+    "courseId": "art-of-conversation",
+    "title": "Why Are Good Questions More Powerful Than Good Answers?",
+    "summary": "Learn how thoughtful questions reveal assumptions, deepen conversations, and help people think more clearly.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Questions direct attention",
+        "body": "The question you ask determines what information someone considers relevant."
+      },
+      {
+        "heading": "Open questions create exploration",
+        "body": "Questions that invite explanation rather than a simple yes or no can reveal motivations, uncertainty, and perspectives."
+      },
+      {
+        "heading": "Curiosity builds understanding",
+        "body": "Genuine curiosity encourages people to explain their reasoning and can uncover information that would otherwise remain hidden."
+      }
+    ],
+    "takeaways": [
+      "Questions direct attention",
+      "Open questions encourage deeper explanation",
+      "Curiosity reveals hidden information"
+    ],
+    "quizId": "conversation-02-quiz"
+  },
+  {
+    "id": "conversation-03",
+    "courseId": "art-of-conversation",
+    "title": "How Can You Disagree Without Turning It Into a Fight?",
+    "summary": "Explore disagreement, identity, evidence, emotional regulation, and the difference between challenging an idea and attacking a person.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Ideas are not identities",
+        "body": "When people feel that disagreement threatens their identity, they may become defensive rather than curious."
+      },
+      {
+        "heading": "Separate person from argument",
+        "body": "Critiquing reasoning or evidence allows disagreement without attacking the character of the person expressing the idea."
+      },
+      {
+        "heading": "Ask before declaring",
+        "body": "Clarifying what someone actually means can reveal that apparent disagreements sometimes come from different definitions or assumptions."
+      }
+    ],
+    "takeaways": [
+      "Disagreement becomes harder when identity feels threatened",
+      "Critique ideas rather than people",
+      "Clarification can reveal hidden assumptions"
+    ],
+    "quizId": "conversation-03-quiz"
+  },
+
+  {
+    "id": "civilization-01",
+    "courseId": "civilizations-that-shaped-world",
+    "title": "Why Did Cities Change Human Civilization?",
+    "summary": "Explore how permanent settlements, specialization, trade, and institutions transformed human societies.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Settlements changed daily life",
+        "body": "Permanent settlements allowed populations to grow and created opportunities for specialized work beyond food production."
+      },
+      {
+        "heading": "Specialization creates complexity",
+        "body": "When individuals specialize in different roles, societies can develop complex systems of trade, administration, technology, and culture."
+      },
+      {
+        "heading": "Cities concentrate ideas",
+        "body": "Dense populations allow knowledge, technologies, and cultural practices to spread through interaction."
+      }
+    ],
+    "takeaways": [
+      "Permanent settlements enabled larger societies",
+      "Specialization increased social complexity",
+      "Cities became centers of knowledge and exchange"
+    ],
+    "quizId": "civilization-01-quiz"
+  },
+  {
+    "id": "civilization-02",
+    "courseId": "civilizations-that-shaped-world",
+    "title": "Why Do Empires Rise and Fall?",
+    "summary": "Explore the economic, political, military, and environmental forces that influence the growth and decline of large states.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Expansion creates opportunity",
+        "body": "Empires can expand through military power, alliances, trade, and administrative systems that bring new territories under centralized control."
+      },
+      {
+        "heading": "Size creates challenges",
+        "body": "Large territories are difficult to govern. Communication, logistics, internal conflict, and external threats can become increasingly difficult to manage."
+      },
+      {
+        "heading": "Decline has many causes",
+        "body": "Historical collapses rarely have one explanation. Economic problems, political instability, warfare, environmental changes, and social pressures can interact."
+      }
+    ],
+    "takeaways": [
+      "Empires expand through multiple mechanisms",
+      "Large states face increasing coordination challenges",
+      "Historical decline usually has multiple interacting causes"
+    ],
+    "quizId": "civilization-02-quiz"
+  },
+  {
+    "id": "civilization-03",
+    "courseId": "civilizations-that-shaped-world",
+    "title": "How Do Ancient Ideas Survive Thousands of Years?",
+    "summary": "Discover how writing, education, institutions, architecture, and cultural transmission preserve ideas across generations.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Writing preserves information",
+        "body": "Writing allows knowledge to travel across time and distance, making it possible for later generations to access ideas from earlier societies."
+      },
+      {
+        "heading": "Institutions transmit culture",
+        "body": "Schools, religious institutions, governments, and communities can preserve and reinterpret knowledge."
+      },
+      {
+        "heading": "Ideas evolve as they travel",
+        "body": "Cultural transmission rarely preserves ideas unchanged. Concepts are often adapted as they move between societies and historical periods."
+      }
+    ],
+    "takeaways": [
+      "Writing enables long-term knowledge transmission",
+      "Institutions preserve and reinterpret ideas",
+      "Cultural ideas change as they move across societies"
+    ],
+    "quizId": "civilization-03-quiz"
+  },
+
+  {
+    "id": "invention-01",
+    "courseId": "history-of-inventions",
+    "title": "Why Was the Internet Not Invented for Social Media?",
+    "summary": "Trace how technologies created for communication and research eventually became the foundation of the modern digital world.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Technology has unintended futures",
+        "body": "The original purpose of a technology does not determine how future generations will use it."
+      },
+      {
+        "heading": "Networks connect possibilities",
+        "body": "Communication networks create value by allowing information and people to interact across distances."
+      },
+      {
+        "heading": "Platforms emerge from infrastructure",
+        "body": "Many modern services depend on foundational technologies that were created long before their current applications existed."
+      }
+    ],
+    "takeaways": [
+      "Technology often develops beyond its original purpose",
+      "Networks create value through connection",
+      "Modern platforms build on older infrastructure"
+    ],
+    "quizId": "invention-01-quiz"
+  },
+  {
+    "id": "invention-02",
+    "courseId": "history-of-inventions",
+    "title": "What Famous Inventions Happened by Accident?",
+    "summary": "Explore how unexpected observations and mistakes have sometimes led to major discoveries.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Accidents require attention",
+        "body": "Unexpected results only become discoveries when someone notices that something unusual happened and investigates it."
+      },
+      {
+        "heading": "Serendipity meets preparation",
+        "body": "Many accidental discoveries depend on existing knowledge and the ability to recognize why an unexpected result matters."
+      },
+      {
+        "heading": "Discovery requires experimentation",
+        "body": "Unexpected observations become useful when researchers test them, reproduce them, and understand the underlying mechanism."
+      }
+    ],
+    "takeaways": [
+      "Accidental discoveries require careful observation",
+      "Preparation helps people recognize unexpected opportunities",
+      "Experiments turn observations into knowledge"
+    ],
+    "quizId": "invention-02-quiz"
+  },
+  {
+    "id": "invention-03",
+    "courseId": "history-of-inventions",
+    "title": "Why Do Some Technologies Change the World?",
+    "summary": "Understand why certain inventions spread rapidly while others remain niche or disappear.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Technology needs an ecosystem",
+        "body": "An invention becomes influential when supporting infrastructure, manufacturing, distribution, and user demand allow it to spread."
+      },
+      {
+        "heading": "Network effects accelerate adoption",
+        "body": "Some technologies become more valuable as more people use them, creating feedback loops that encourage further adoption."
+      },
+      {
+        "heading": "Convenience changes behavior",
+        "body": "Technologies that make existing tasks dramatically easier or enable entirely new activities can transform everyday habits."
+      }
+    ],
+    "takeaways": [
+      "Successful technologies depend on supporting ecosystems",
+      "Network effects can accelerate adoption",
+      "Convenience and new capabilities can change behavior"
+    ],
+    "quizId": "invention-03-quiz"
+  },
+
+  {
+    "id": "thinking-01",
+    "courseId": "thinking-clearly",
+    "title": "How Do You Know When an Argument Is Weak?",
+    "summary": "Learn to identify unsupported assumptions, false dilemmas, emotional manipulation, and other common reasoning problems.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Claims need support",
+        "body": "A conclusion is stronger when the evidence actually supports it rather than merely appearing related to it."
+      },
+      {
+        "heading": "Watch the hidden assumption",
+        "body": "Arguments often depend on premises that are not stated explicitly. Identifying these assumptions can reveal where reasoning succeeds or fails."
+      },
+      {
+        "heading": "Confidence is not evidence",
+        "body": "A person can express an incorrect claim with complete confidence. The quality of reasoning depends on evidence and logic rather than certainty of delivery."
+      }
+    ],
+    "takeaways": [
+      "Strong claims require relevant evidence",
+      "Hidden assumptions can weaken arguments",
+      "Confidence does not prove correctness"
+    ],
+    "quizId": "thinking-01-quiz"
+  },
+  {
+    "id": "thinking-02",
+    "courseId": "thinking-clearly",
+    "title": "Why Do We Believe Things That Confirm What We Already Think?",
+    "summary": "Explore confirmation bias and how people selectively notice information that supports existing beliefs.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Beliefs influence attention",
+        "body": "People tend to notice evidence that fits their expectations and may overlook information that challenges them."
+      },
+      {
+        "heading": "Information environments matter",
+        "body": "Social networks and personalized media can reinforce existing beliefs by repeatedly exposing people to similar viewpoints."
+      },
+      {
+        "heading": "Disconfirmation is uncomfortable",
+        "body": "Information that threatens a deeply held belief can create psychological discomfort, making objective evaluation more difficult."
+      }
+    ],
+    "takeaways": [
+      "Existing beliefs influence what people notice",
+      "Information environments can reinforce beliefs",
+      "Challenging evidence can be psychologically uncomfortable"
+    ],
+    "quizId": "thinking-02-quiz"
+  },
+  {
+    "id": "thinking-03",
+    "courseId": "thinking-clearly",
+    "title": "How Can You Change Your Mind Without Losing Your Identity?",
+    "summary": "Learn why intellectual flexibility is a strength and how to update beliefs when evidence changes.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Beliefs are models",
+        "body": "A belief is a mental model of how the world works. Models are useful when they predict reality and should be updated when evidence consistently contradicts them."
+      },
+      {
+        "heading": "Separate belief from identity",
+        "body": "When a belief becomes part of personal identity, changing it can feel like losing part of yourself."
+      },
+      {
+        "heading": "Revision is not failure",
+        "body": "Changing a belief in response to better evidence is a sign that the reasoning process is functioning rather than a sign of weakness."
+      }
+    ],
+    "takeaways": [
+      "Beliefs are models that can be updated",
+      "Identity can make belief revision difficult",
+      "Changing your mind can be a sign of good reasoning"
+    ],
+    "quizId": "thinking-03-quiz"
+  },
+
+  {
+    "id": "philosophy-01",
+    "courseId": "big-questions-philosophy",
+    "title": "Are You Actually Making Your Own Decisions?",
+    "summary": "Explore free will, determinism, responsibility, and the philosophical tension between choice and causation.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "The feeling of choice",
+        "body": "People experience themselves as agents who make decisions, but philosophers have long debated what this experience means."
+      },
+      {
+        "heading": "Determinism challenges intuition",
+        "body": "If every event has prior causes, some philosophers ask whether human choices can genuinely be free."
+      },
+      {
+        "heading": "Different definitions create different answers",
+        "body": "Some philosophical positions argue that meaningful freedom can exist even in a causally structured universe, while others reject that conclusion."
+      }
+    ],
+    "takeaways": [
+      "Free will is a longstanding philosophical problem",
+      "Determinism raises questions about choice",
+      "Different definitions of freedom produce different conclusions"
+    ],
+    "quizId": "philosophy-01-quiz"
+  },
+  {
+    "id": "philosophy-02",
+    "courseId": "big-questions-philosophy",
+    "title": "What Makes an Action Morally Right?",
+    "summary": "Compare major approaches to ethics and discover why reasonable people can disagree about difficult moral questions.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Consequences matter",
+        "body": "Consequentialist approaches judge actions partly by the outcomes they produce."
+      },
+      {
+        "heading": "Rules matter",
+        "body": "Deontological approaches emphasize duties, principles, and rules that should guide behavior regardless of certain outcomes."
+      },
+      {
+        "heading": "Character matters",
+        "body": "Virtue ethics focuses on the character traits and habits that allow people to live and act well."
+      }
+    ],
+    "takeaways": [
+      "Ethical theories evaluate actions differently",
+      "Consequences can influence moral judgment",
+      "Duties and character provide alternative ethical frameworks"
+    ],
+    "quizId": "philosophy-02-quiz"
+  },
+  {
+    "id": "philosophy-03",
+    "courseId": "big-questions-philosophy",
+    "title": "What Makes a Life Meaningful?",
+    "summary": "Explore different ideas about purpose, meaning, relationships, achievement, and how humans construct significance.",
+    "minutes": 18,
+    "sections": [
+      {
+        "heading": "Meaning can be personal",
+        "body": "People often find meaning through relationships, contribution, creativity, knowledge, spirituality, or other forms of commitment."
+      },
+      {
+        "heading": "Meaning is debated",
+        "body": "Some philosophies argue that meaning is discovered, while others suggest that humans create meaning through their choices and commitments."
+      },
+      {
+        "heading": "A meaningful life can take many forms",
+        "body": "There is no single universally accepted blueprint for meaning. Different traditions propose different answers to the question of what makes life valuable."
+      }
+    ],
+    "takeaways": [
+      "Meaning can come from many sources",
+      "Philosophers disagree about whether meaning is discovered or created",
+      "Different people can pursue meaningful lives in different ways"
+    ],
+    "quizId": "philosophy-03-quiz"
+  },
+
+  {
+    "id": "deepwork-01",
+    "courseId": "deep-work",
+    "title": "Why Is Your Attention So Easy to Steal?",
+    "summary": "Understand attention, notifications, novelty, and why modern digital environments compete aggressively for your focus.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Attention is limited",
+        "body": "Human attention cannot process every available signal simultaneously. The brain constantly selects what receives priority."
+      },
+      {
+        "heading": "Novelty is powerful",
+        "body": "New information can attract attention because the brain benefits from detecting changes and potentially important events."
+      },
+      {
+        "heading": "Digital systems compete for attention",
+        "body": "Notifications, feeds, and recommendation systems are often designed to encourage repeated engagement."
+      }
+    ],
+    "takeaways": [
+      "Attention is a limited resource",
+      "Novelty naturally attracts attention",
+      "Digital systems can compete aggressively for focus"
+    ],
+    "quizId": "deepwork-01-quiz"
+  },
+  {
+    "id": "deepwork-02",
+    "courseId": "deep-work",
+    "title": "Can You Train Your Brain to Focus Again?",
+    "summary": "Explore deliberate focus, distraction management, environmental design, and the role of practice in improving concentration.",
+    "minutes": 16,
+    "sections": [
+      {
+        "heading": "Focus is a skill",
+        "body": "The ability to sustain attention can improve with repeated practice and appropriate environmental conditions."
+      },
+      {
+        "heading": "Remove competing signals",
+        "body": "Reducing notifications, visible distractions, and unnecessary interruptions can lower the number of attention shifts required."
+      },
+      {
+        "heading": "Start with realistic sessions",
+        "body": "Building focus gradually can be more sustainable than expecting hours of uninterrupted concentration immediately."
+      }
+    ],
+    "takeaways": [
+      "Sustained attention can be practiced",
+      "Reducing distractions makes focus easier",
+      "Gradual training can build concentration"
+    ],
+    "quizId": "deepwork-02-quiz"
+  },
+  {
+    "id": "deepwork-03",
+    "courseId": "deep-work",
+    "title": "Why Does Multitasking Feel Productive?",
+    "summary": "Understand task switching, attention residue, and why doing many things at once can reduce performance.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "The brain switches tasks",
+        "body": "What people call multitasking often involves rapidly moving attention between different tasks."
+      },
+      {
+        "heading": "Switching has a cost",
+        "body": "Each switch requires the brain to reorient toward the new task, which can reduce efficiency and increase errors."
+      },
+      {
+        "heading": "Busy is not the same as productive",
+        "body": "Frequent activity can create the feeling of progress even when meaningful work is being interrupted repeatedly."
+      }
+    ],
+    "takeaways": [
+      "Multitasking often means rapid task switching",
+      "Switching creates cognitive costs",
+      "Activity and productivity are not the same"
+    ],
+    "quizId": "deepwork-03-quiz"
+  },
+
+  {
+    "id": "learning-01",
+    "courseId": "learning-how-to-learn",
+    "title": "Why Does Rereading Feel Like Learning?",
+    "summary": "Discover the difference between familiarity and genuine retrieval and why passive study methods can create false confidence.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Familiarity feels like knowledge",
+        "body": "Seeing information repeatedly can make it feel familiar, but familiarity does not guarantee that you can recall or apply the idea independently."
+      },
+      {
+        "heading": "Retrieval reveals gaps",
+        "body": "Trying to recall information without looking at the answer exposes what you actually know and what still needs practice."
+      },
+      {
+        "heading": "Difficulty can be useful",
+        "body": "Effortful retrieval can feel harder than rereading, but that difficulty can strengthen long-term learning."
+      }
+    ],
+    "takeaways": [
+      "Familiarity is different from mastery",
+      "Retrieval reveals knowledge gaps",
+      "Effortful practice can improve long-term learning"
+    ],
+    "quizId": "learning-01-quiz"
+  },
+  {
+    "id": "learning-02",
+    "courseId": "learning-how-to-learn",
+    "title": "Why Does Forgetting Help You Learn?",
+    "summary": "Understand why some forgetting between practice sessions can make later retrieval more powerful.",
+    "minutes": 15,
+    "sections": [
+      {
+        "heading": "Memory needs retrieval",
+        "body": "When information becomes slightly harder to retrieve, successfully recalling it can strengthen the memory pathway."
+      },
+      {
+        "heading": "Spacing creates productive difficulty",
+        "body": "Spacing study sessions introduces some forgetting between attempts, requiring the learner to reconstruct the information."
+      },
+      {
+        "heading": "Balance matters",
+        "body": "If information becomes completely inaccessible, practice may become inefficient. Effective spacing keeps retrieval challenging but achievable."
+      }
+    ],
+    "takeaways": [
+      "Some forgetting can make retrieval more valuable",
+      "Spacing creates productive difficulty",
+      "Effective practice balances challenge and accessibility"
+    ],
+    "quizId": "learning-02-quiz"
+  },
+  {
+    "id": "learning-03",
+    "courseId": "learning-how-to-learn",
+    "title": "How Do You Turn Knowledge Into a Skill?",
+    "summary": "Explore deliberate practice, feedback, repetition, and real-world application.",
+    "minutes": 17,
+    "sections": [
+      {
+        "heading": "Knowledge is not automatically performance",
+        "body": "Knowing how something works does not guarantee the ability to perform the task under real conditions."
+      },
+      {
+        "heading": "Practice must target weaknesses",
+        "body": "Deliberate practice focuses on specific aspects of performance that need improvement rather than repeating everything equally."
+      },
+      {
+        "heading": "Feedback accelerates improvement",
+        "body": "Feedback reveals the difference between intended and actual performance, allowing learners to adjust their approach."
+      }
+    ],
+    "takeaways": [
+      "Knowledge and skill are different",
+      "Deliberate practice targets specific weaknesses",
+      "Feedback helps convert practice into improvement"
+    ],
+    "quizId": "learning-03-quiz"
   }
 ]
