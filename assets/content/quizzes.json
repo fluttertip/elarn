@@ -1,0 +1,13 @@
+[
+  {
+    "lessonId": "flutter-01",
+    "questions": [
+      {
+        "question": "Where should course content be loaded?",
+        "answers": ["Inside every build method", "Through a repository", "Only from a button callback", "Inside theme code"],
+        "correctIndex": 1,
+        "explanation": "Repositories keep content loading separate from presentation and make the app testable."
+      }
+    ]
+  }
+]

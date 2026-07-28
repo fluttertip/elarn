@@ -1,0 +1,26 @@
+[
+  {
+    "id": "flutter-01-01",
+    "courseId": "flutter-foundations",
+    "front": "What is a Widget in Flutter?",
+    "back": "A Widget is the basic building block of a Flutter UI.",
+    "tags": ["widgets", "ui"],
+    "difficulty": "Beginner"
+  },
+  {
+    "id": "flutter-01-02",
+    "courseId": "flutter-foundations",
+    "front": "What does the build method return?",
+    "back": "The build method returns a Widget tree that Flutter renders.",
+    "tags": ["widgets", "build"],
+    "difficulty": "Beginner"
+  },
+  {
+    "id": "product-01-01",
+    "courseId": "product-design",
+    "front": "What is a design system?",
+    "back": "A design system is a set of reusable principles, components, and patterns.",
+    "tags": ["design", "systems"],
+    "difficulty": "Intermediate"
+  }
+]

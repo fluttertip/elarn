@@ -1,0 +1,32 @@
+[
+  {
+    "id": "first-lesson",
+    "title": "First Steps",
+    "description": "Complete your first lesson.",
+    "icon": "assets/images/achievements/first-lesson.png",
+    "xpReward": 100,
+    "targetType": "lessons_completed",
+    "targetValue": 1,
+    "isHidden": false
+  },
+  {
+    "id": "streak-3",
+    "title": "Momentum Builder",
+    "description": "Maintain a 3-day learning streak.",
+    "icon": "assets/images/achievements/streak-3.png",
+    "xpReward": 150,
+    "targetType": "streak_days",
+    "targetValue": 3,
+    "isHidden": false
+  },
+  {
+    "id": "course-complete",
+    "title": "Course Finisher",
+    "description": "Finish your first course.",
+    "icon": "assets/images/achievements/course-complete.png",
+    "xpReward": 250,
+    "targetType": "courses_completed",
+    "targetValue": 1,
+    "isHidden": false
+  }
+]

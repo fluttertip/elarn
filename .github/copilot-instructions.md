@@ -1,0 +1,1 @@
+See /AGENTS.md for project rules. Read docs/PROGRESS.md before making changes.

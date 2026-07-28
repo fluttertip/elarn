@@ -1,0 +1,15 @@
+[
+  {
+    "id": "flutter-01",
+    "courseId": "flutter-foundations",
+    "title": "The widget mindset",
+    "summary": "Understand why Flutter UIs are composable trees.",
+    "minutes": 12,
+    "sections": [
+      {"heading": "Everything is a widget", "body": "Flutter builds interfaces from composable widgets. Keep each widget focused on one visual or interaction responsibility."},
+      {"heading": "The production rule", "body": "Keep content and state outside presentation code. Widgets render data; repositories load data."}
+    ],
+    "takeaways": ["Widgets describe UI", "Build small components", "Keep content out of widgets"],
+    "quizId": "flutter-01-quiz"
+  }
+]

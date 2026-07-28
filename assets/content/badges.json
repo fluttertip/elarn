@@ -1,0 +1,18 @@
+[
+  {
+    "id": "streak-7",
+    "name": "7-Day Streak",
+    "description": "Maintain a 7-day learning streak.",
+    "icon": "assets/images/badges/streak-7.png",
+    "rarity": "Gold",
+    "earnedAt": "2026-07-28T09:00:00Z"
+  },
+  {
+    "id": "focus-10",
+    "name": "Focus Starter",
+    "description": "Complete 10 lessons with calm focus.",
+    "icon": "assets/images/badges/focus-10.png",
+    "rarity": "Silver",
+    "earnedAt": "2026-07-28T10:00:00Z"
+  }
+]
