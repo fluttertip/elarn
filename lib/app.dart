@@ -40,122 +40,148 @@ class ELearnApp extends ConsumerWidget {
               end: Alignment.bottomRight,
               colors: [
                 scheme.surface,
-                Color.lerp(
-                      scheme.surface,
-                      scheme.primary,
-                      0.06,
-                    ) ??
+                Color.lerp(scheme.surface, scheme.primary, 0.06) ??
                     scheme.surface,
-                Color.lerp(
-                      scheme.surface,
-                      scheme.secondary,
-                      0.04,
-                    ) ??
+                Color.lerp(scheme.surface, scheme.secondary, 0.04) ??
                     scheme.surface,
               ],
             ),
           ),
           child: SafeArea(
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 20,
-                ),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    maxWidth: 420,
-                    minHeight: 600,
-                    maxHeight: 900,
-                  ),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: theme.brightness == Brightness.dark
-                          ? Colors.black
-                          : const Color(0xFF1A1A1A),
-                      borderRadius: BorderRadius.circular(38),
-                      border: Border.all(
-                        color: Colors.white.withOpacity(0.12),
-                        width: 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.22),
-                          blurRadius: 35,
-                          spreadRadius: 4,
-                          offset: const Offset(0, 18),
-                        ),
-                        BoxShadow(
-                          color: scheme.primary.withOpacity(0.08),
-                          blurRadius: 45,
-                          spreadRadius: 2,
-                        ),
-                      ],
+            child: Stack(
+              children: [
+                // Centered mobile app frame.
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 20,
                     ),
-                    padding: const EdgeInsets.all(7),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(32),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(
+                        maxWidth: 420,
+                        minHeight: 600,
+                        maxHeight: 900,
+                      ),
                       child: Container(
-                        color: scheme.surface,
-                        child: Column(
-                          children: [
-                            // Mobile status bar / speaker area.
-                            Container(
-                              height: 30,
-                              color: scheme.surface,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    width: 90,
-                                    height: 6,
-                                    decoration: BoxDecoration(
-                                      color: theme.brightness ==
-                                              Brightness.dark
-                                          ? Colors.white24
-                                          : Colors.black26,
-                                      borderRadius:
-                                          BorderRadius.circular(10),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                        decoration: BoxDecoration(
+                          color: theme.brightness == Brightness.dark
+                              ? Colors.black
+                              : const Color(0xFF1A1A1A),
+                          borderRadius: BorderRadius.circular(38),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.12),
+                            width: 2,
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.22),
+                              blurRadius: 35,
+                              spreadRadius: 4,
+                              offset: const Offset(0, 18),
                             ),
-
-                            // Actual application content.
-                            Expanded(
-                              child: Material(
-                                color: scheme.surface,
-                                child:
-                                    child ?? const SizedBox.shrink(),
-                              ),
-                            ),
-
-                            // Mobile home indicator.
-                            Container(
-                              height: 24,
-                              color: scheme.surface,
-                              alignment: Alignment.center,
-                              child: Container(
-                                width: 110,
-                                height: 5,
-                                decoration: BoxDecoration(
-                                  color: theme.brightness ==
-                                          Brightness.dark
-                                      ? Colors.white30
-                                      : Colors.black26,
-                                  borderRadius:
-                                      BorderRadius.circular(10),
-                                ),
-                              ),
+                            BoxShadow(
+                              color: scheme.primary.withOpacity(0.08),
+                              blurRadius: 45,
+                              spreadRadius: 2,
                             ),
                           ],
                         ),
+                        padding: const EdgeInsets.all(7),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(32),
+                          child: Container(
+                            color: scheme.surface,
+                            child: Column(
+                              children: [
+                                // Mobile status bar / speaker area.
+                                Container(
+                                  height: 30,
+                                  color: scheme.surface,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Container(
+                                        width: 90,
+                                        height: 6,
+                                        decoration: BoxDecoration(
+                                          color:
+                                              theme.brightness ==
+                                                  Brightness.dark
+                                              ? Colors.white24
+                                              : Colors.black26,
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                // Actual application content.
+                                Expanded(
+                                  child: Material(
+                                    color: scheme.surface,
+                                    child: child ?? const SizedBox.shrink(),
+                                  ),
+                                ),
+
+                                // Mobile home indicator.
+                                Container(
+                                  height: 24,
+                                  color: scheme.surface,
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    width: 110,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                      color: theme.brightness == Brightness.dark
+                                          ? Colors.white30
+                                          : Colors.black26,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
+
+                // Small desktop-only browser hint.
+                Positioned(
+                  left: 24,
+                  bottom: 18,
+                  child: Text(
+                    'Zoom out browser for the best experience',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 0.1,
+                      color: Colors.black.withOpacity(0.55),
+                    ),
+                  ),
+                ),
+
+                // Small desktop-only credit.
+                Positioned(
+                  right: 24,
+                  bottom: 18,
+                  child: Text(
+                    'Made by Niranjan',
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 0.1,
+                      color: Colors.black.withOpacity(0.55),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         );
@@ -163,4 +189,3 @@ class ELearnApp extends ConsumerWidget {
     );
   }
 }
-
